@@ -6,5 +6,5 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 export function Home() {
-	return <SecondsCounter />;
+	return <div></div>;
 }
