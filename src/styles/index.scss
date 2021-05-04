@@ -11,6 +11,27 @@
     width: 150px;
     height: 350px;
     padding-top: 10px;
+    background-color: black;
+}
+
+.green{
+    background-color: #034401;
+    
+
+}
+.red{
+    background-color: #a30303;
+    
+
+}
+.yellow{
+    background-color: rgb(128, 128, 2);
+    
+}
+
+
+.glow{   
+    box-shadow: 0 0 40px 20px #fff, 0 0 100px 50px #ff0;
 }
 /* 
 
