@@ -3,71 +3,46 @@ import Light from "./light.jsx";
 import PropTypes from "prop-types";
 
 const TrafficLight = () => {
-    const [lightStatus, setLightStatus] = useState({
-        green: false,
-        red: false,
-        yellow: false
-    });
+	const [lightStatus, setLightStatus] = useState({
+		redLight: "bg-danger",
+		ambarLight: "bg-warning",
+		greenLight: "bg-success"
+	});
 
-    return (
-        <div className="box container m-auto border border-dark d-flex flex-column">
-            <Light
-                color="green"
-                myOnClick={() => {
-                    setLightStatus({
-                        green: true,
-                        red: false,
-                        yellow: false
-                    });
-                    if (LightStatus.green == true) {
-                        color.concat(" glow");
-                    }
-                    if (LightStatus.green == false) {
-                        color = "green";
-                    }
-                    console.log(lightStatus.green);
-                }}
-                status={lightStatus.green}
-            />
-            <Light
-                color="red"
-                myOnClick={() =>
-                    setLightStatus({
-                        green: false,
-                        red: true,
-                        yellow: false
-                    });
-                    if (LightStatus.red == true) {
-                        color.concat(" glow");
-                    }
-                    if (LightStatus.red == false) {
-                        color = "red";
-                    }
-                    
-					console.log(lightStatus.red);)
-				}
-				status={lightStatus.red}
+	return (
+		<div className="box container border border-dark d-flex flex-column">
+			<Light
+				status={lightStatus.redLight}
+				myOnClick={() => {
+					setLightStatus({
+						redLight: "bg-danger glow",
+						ambarLight: "bg-warning",
+						greenLight: "bg-success"
+					});
+				}}
 			/>
-            <Light
-                color="yellow"
-                myOnClick={() =>
-                    setLightStatus({
-                        green: false,
-                        red: false,
-                        yellow: true
-                    });
-                    if (LightStatus.yellow == true) {
-                        color.concat(" glow");
-                    }
-                    if (LightStatus.yellow == false) {
-                        color = "yellow";
-                    }
-					console.log(lightStatus.green);)
+			<Light
+				myOnClick={() =>
+					setLightStatus({
+						redLight: "bg-danger",
+						ambarLight: "bg-warning glow",
+						greenLight: "bg-success"
+					})
 				}
-				status={lightStatus.yellow}
+				status={lightStatus.ambarLight}
 			/>
-        </div>
-    );
+			<Light
+				myOnClick={() =>
+					setLightStatus({
+						redLight: "bg-danger",
+						ambarLight: "bg-warning",
+						greenLight: "bg-success glow"
+					})
+				}
+				status={lightStatus.greenLight}
+			/>
+		</div>
+	);
 };
 
 export default TrafficLight;
